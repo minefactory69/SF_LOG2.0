@@ -1,0 +1,22 @@
+{
+  "name": "asd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "after-load": "^1.0.4",
+    "discord.js": "^11.6.4",
+    "discord.js-commando": "^0.10.0",
+    "discord.js-menu": "^2.1.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.26.0",
+    "ms": "^2.1.2",
+    "snekfetch": "^4.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xd",
+  "license": "ISC",
+  "description": ""
+}
