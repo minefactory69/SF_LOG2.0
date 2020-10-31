@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone : true});
 const botconfig = require("./botconfig.json");
-const tokenfile = require("./tokenfile.json");
 
 const fs = require("fs");
 ////////| BEÁLLÍTÁSOK |//////////////////////////
@@ -214,6 +213,6 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenfile.token);
+bot.login(process.env.BOT_TOKEN);
 
 
